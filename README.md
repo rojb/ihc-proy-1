@@ -26,8 +26,11 @@ Queremos comprender las dificultades que enfrentan las personas en Santa Cruz de
 ├── README.md
 └── brief/
     └── brief-v0.1.md
+    └── brief-v0.2.0.md
+└── research/
+    └── evidencias.md    
 ```
 
 ## Estado
 
-Brief v0.1 — fase de investigación de usuario. Las hipótesis planteadas aún no han sido validadas.
+Brief v0.2.0 — fase de investigación de usuario. Las hipótesis planteadas aún no han sido validadas.
