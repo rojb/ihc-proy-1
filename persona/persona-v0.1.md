@@ -26,7 +26,7 @@
 
 La persona que **busca y coordina**: quiere salir, todavía no tiene plan cerrado y necesita convencer/consultar a un grupo. Es quien atraviesa el proceso completo —descubrir, comparar, verificar vigencia, compartir, decidir— y por eso acumula toda la fricción.
 
-El **organizador pequeño** también vive un problema real (repetir información cuando algo cambia), pero es un usuario secundario: sin gente decidiendo planes, publicar no tiene valor. Lo dejamos fuera de esta Persona v0.1.
+El **organizador pequeño** también vive un problema real (repetir información cuando algo cambia), pero es un usuario secundario: sin gente decidiendo planes, publicar no tiene valor. Por eso no está en esta Persona, y tiene la suya propia en `persona/persona-organizador-v0.1.md`.
 
 ### 2. ¿Qué intenta hacer y qué le cuesta hoy?
 

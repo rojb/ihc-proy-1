@@ -72,7 +72,7 @@ Le sirve para dimensionar la convocatoria. **No es una confirmación de asistenc
 - La persona quiere guardar el evento para más tarde (guardar ≠ interesar: son intenciones distintas).
 - **Alguien marca interés y después no va.** La app no lo verifica ni lo penaliza.
 - **Un evento con cero interesados.** Hay que decidir si se muestra "0" o no se muestra nada.
-- Flujo del organizador (publicar, editar, cancelar): es **otra tarea**, con su propio flujo en la próxima versión.
+- Flujo del organizador (publicar, editar, cancelar): es **otra tarea**, y tiene su propio documento en `app-map/flujo-organizador-v0.1.md`.
 
 ---
 
