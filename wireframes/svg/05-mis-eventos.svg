@@ -10,30 +10,30 @@
   <g transform="translate(16,80)">
     <rect width="343" height="96" fill="none" stroke="black"/>
     <text font-family="sans-serif" x="16" y="30" font-size="14" fill="black">Noche de cumbia</text>
-    <rect x="243" y="14" width="84" height="20" fill="none" stroke="black" stroke-dasharray="4"/>
-    <text font-family="sans-serif" x="285" y="28" text-anchor="middle" font-size="10" fill="black">Vigente</text>
+    <rect x="239" y="16" width="88" height="24" fill="none" stroke="black" stroke-dasharray="4"/>
+    <text font-family="sans-serif" x="283" y="33" text-anchor="middle" font-size="10" fill="black">Vigente</text>
     <text font-family="sans-serif" x="16" y="54" font-size="12" fill="black">Vie 12 sep · 21:00 · Bs 30</text>
     <text font-family="sans-serif" x="16" y="78" font-size="12" fill="black">12 interesados</text>
-    <rect x="243" y="52" width="84" height="32" fill="none" stroke="black"/>
-    <text font-family="sans-serif" x="285" y="72" text-anchor="middle" font-size="12" fill="black">Editar</text>
+    <rect x="239" y="48" width="88" height="32" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="283" y="68" text-anchor="middle" font-size="12" fill="black">Editar</text>
   </g>
 
   <g transform="translate(16,192)">
     <rect width="343" height="96" fill="none" stroke="black"/>
     <text font-family="sans-serif" x="16" y="30" font-size="14" fill="black">Jam abierta</text>
-    <rect x="243" y="14" width="84" height="20" fill="none" stroke="black" stroke-dasharray="4"/>
-    <text font-family="sans-serif" x="285" y="28" text-anchor="middle" font-size="10" fill="black">Vigente</text>
+    <rect x="239" y="16" width="88" height="24" fill="none" stroke="black" stroke-dasharray="4"/>
+    <text font-family="sans-serif" x="283" y="33" text-anchor="middle" font-size="10" fill="black">Vigente</text>
     <text font-family="sans-serif" x="16" y="54" font-size="12" fill="black">Jue 18 sep · 20:00 · Gratis</text>
     <text font-family="sans-serif" x="16" y="78" font-size="12" fill="black">3 interesados</text>
-    <rect x="243" y="52" width="84" height="32" fill="none" stroke="black"/>
-    <text font-family="sans-serif" x="285" y="72" text-anchor="middle" font-size="12" fill="black">Editar</text>
+    <rect x="239" y="48" width="88" height="32" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="283" y="68" text-anchor="middle" font-size="12" fill="black">Editar</text>
   </g>
 
   <g transform="translate(16,304)">
     <rect width="343" height="96" fill="none" stroke="black" stroke-dasharray="4"/>
     <text font-family="sans-serif" x="16" y="30" font-size="14" fill="black">Peña de agosto</text>
-    <rect x="243" y="14" width="84" height="20" fill="none" stroke="black" stroke-dasharray="4"/>
-    <text font-family="sans-serif" x="285" y="28" text-anchor="middle" font-size="10" fill="black">Finalizado</text>
+    <rect x="239" y="16" width="88" height="24" fill="none" stroke="black" stroke-dasharray="4"/>
+    <text font-family="sans-serif" x="283" y="33" text-anchor="middle" font-size="10" fill="black">Finalizado</text>
     <text font-family="sans-serif" x="16" y="54" font-size="12" fill="black">Sab 23 ago · 21:00 · Bs 25</text>
     <text font-family="sans-serif" x="16" y="78" font-size="12" fill="black">18 interesados</text>
   </g>

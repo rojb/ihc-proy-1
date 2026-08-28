@@ -90,7 +90,9 @@ Cada pantalla ordena la atención en tres niveles, como pide la clase:
 | **24 px** | Grupos distintos dentro de la misma pantalla |
 | **32 px** | Secciones o momentos distintos de la tarea |
 
-Medidas fijas derivadas: ancho 375, margen 16, contenido 343, header 64, acción principal 56, campo 44, barra inferior 72. **Todas son múltiplos de 8.**
+**Medidas de los componentes, todas múltiplos de 8:** header 64 · barra inferior 72 · acción principal 56 · campo de formulario 48 · acción secundaria 48 · chip de filtro 40 · tarjeta de evento 112 · fila de "Mis eventos" 96 · indicador de vigencia 88 × 24.
+
+**Dos medidas que no son múltiplos de 8, y el motivo:** el ancho de pantalla es **375** porque lo fija el dispositivo, no nosotros; y el ancho de contenido es **343** porque sale de restarle los dos márgenes de 16. Ninguna de las dos es una decisión de espaciado.
 
 Equivalente en CSS, para cuando esto pase al código:
 
