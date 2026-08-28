@@ -41,6 +41,7 @@ La evidencia completa se encuentra en `research/evidencias.md`.
 - La ubicación ayuda a reducir opciones antes de discutirlas en grupo.
 - WhatsApp continúa siendo un paso importante del proceso de decisión.
 - Para organizadores pequeños, la velocidad de publicación y actualización es una condición importante.
+- Una señal pública de interés puede aportar un criterio más de comparación y darle al organizador una medida de convocatoria. **El respaldo es desparejo y hay que decirlo con precisión:** el lado del organizador tiene apoyo parcial —la Instancia 4 declara que hoy mide el resultado viendo "las respuestas, mensajes y personas que preguntan"—, pero **el lado de la comparación no tiene ninguno**: ninguna instancia menciona el interés ajeno como criterio para elegir un evento.
 
 ### Lo que todavía debemos comprobar
 
@@ -49,6 +50,8 @@ La evidencia completa se encuentra en `research/evidencias.md`.
 - Qué formato de compartir funciona mejor para una conversación grupal.
 - Si los organizadores aceptarían publicar directamente en la plataforma.
 - Qué mecanismo de actualización permite mantener la vigencia de los eventos.
+- Si un contador de interesados influye realmente en la decisión o solo confirma lo que la persona ya había elegido.
+- Qué identificación mínima necesita alguien para marcar interés sin que la aplicación tenga que crear cuentas.
 
 ## 4. Flujo principal
 
@@ -56,11 +59,16 @@ La evidencia completa se encuentra en `research/evidencias.md`.
 
 1. Abrir la aplicación y ver eventos cercanos/vigentes.
 2. Filtrar por fecha, precio o distancia.
-3. Comparar rápidamente varias opciones.
+3. Comparar rápidamente varias opciones, incluyendo cuántas personas marcaron interés.
 4. Abrir una opción para verificar los datos necesarios.
-5. Compartir una opción al grupo.
-6. El grupo acuerda el plan.
-7. Llegar al evento usando la ubicación/mapa.
+5. Marcar "Me interesa" *(opcional)*: contar públicamente que quiere participar. No bloquea el paso siguiente.
+6. Compartir una opción al grupo.
+7. El grupo acuerda el plan.
+8. Llegar al evento usando la ubicación/mapa.
+
+### Efecto hacia el organizador
+
+El interés marcado en el paso 5 llega al organizador dentro de "Mis eventos", sin que la persona tenga que hacer nada más. Le sirve para dimensionar la convocatoria, pero **no es una confirmación de asistencia**.
 
 **Tarea central:** llegar a un plan acordado con otras personas.
 
@@ -71,6 +79,8 @@ La primera capacidad concreta a diseñar e implementar será:
 > **Una lista de eventos que permita comparar rápidamente eventos vigentes mostrando precio, fecha/hora y ubicación/distancia, con una acción directa para compartir el evento.**
 
 La publicación de eventos puede formar parte de la primera versión, pero debe mantenerse como un flujo corto y separado del flujo principal de descubrimiento.
+
+La acción **"Me interesa" con contador público** forma parte de la primera versión, pero **se implementa después de la lista**: depende de resolver antes qué identificación mínima permite no contar dos veces a la misma persona. Sin esa decisión, el contador no significa nada.
 
 ## 6. Usuario y contexto
 
@@ -100,6 +110,7 @@ A partir de la v0.1 y de la investigación simulada:
 3. **Comparar es más importante que acumular eventos.** Mostrar muchas opciones sin datos comparables no resuelve el problema.
 4. **La vigencia debe ser visible y mantenible.** No basta con mostrar la fecha del evento si la publicación puede estar desactualizada.
 5. **El organizador necesita simplicidad.** Agregar un canal nuevo de publicación no debe significar duplicar trabajo.
+6. **Una señal de interés puede servir a las dos puntas.** A quien compara le agrega un criterio; al organizador le da una medida de convocatoria. El riesgo es el **sesgo de popularidad**: los eventos grandes acumulan interés y pueden enterrar a los organizadores pequeños, que son justamente el usuario secundario de este proyecto.
 
 ## 8. Alcance inicial
 
@@ -112,6 +123,9 @@ A partir de la v0.1 y de la investigación simulada:
 - Indicador de vigencia.
 - Filtros básicos por fecha, precio y distancia.
 - Vista de detalle.
+- Acción "Me interesa" revertible, con **contador público de interesados** (solo el número, nunca una lista de nombres).
+- Interesados visibles para el organizador dentro de "Mis eventos".
+- Identificación liviana, con el único fin de no contar dos veces a la misma persona.
 - Compartir evento mediante WhatsApp.
 - Publicación simple para organizadores.
 - Edición/cancelación básica de eventos.
@@ -121,7 +135,8 @@ A partir de la v0.1 y de la investigación simulada:
 - Sistema avanzado de recomendaciones personalizadas.
 - Compra o venta de entradas dentro de la aplicación.
 - Chat entre usuarios.
-- Sistema social de seguidores.
+- Perfiles públicos, seguidores y lista visible de nombres de interesados.
+- Confirmación de asistencia real: "Me interesa" no es "Voy", y la aplicación no verifica quién asistió.
 - Publicidad avanzada para organizadores.
 - Analítica avanzada de campañas.
 - Integración automática con todas las redes sociales.
@@ -132,6 +147,7 @@ A partir de la v0.1 y de la investigación simulada:
 1. **Comparación:** una persona puede identificar rápidamente precio, fecha/hora y ubicación de varias opciones sin abrir múltiples fuentes.
 2. **Coordinación:** una persona puede compartir un evento al grupo sin copiar manualmente toda la información.
 3. **Decisión:** en una prueba posterior, el usuario puede seleccionar una opción y explicar por qué la eligió sin necesitar volver a buscar datos esenciales fuera de la aplicación.
+4. **Señal de interés:** una persona puede contar que le interesa participar en un solo toque y deshacerlo sin costo, y entiende que eso no es una confirmación de asistencia.
 
 ## 10. Preguntas abiertas para la siguiente etapa
 
@@ -143,6 +159,10 @@ A partir de la v0.1 y de la investigación simulada:
 6. ¿Los organizadores aceptarían crear el evento directamente en la aplicación?
 7. ¿Qué información mínima necesita un organizador para publicar sin sentir que está haciendo más trabajo que en Instagram?
 8. ¿La aplicación reduce realmente el número de pasos y aplicaciones utilizadas frente al método actual?
+9. ¿Qué identificación mínima necesita "Me interesa" para que el contador sea confiable sin obligar a crear una cuenta?
+10. ¿Desde qué número el contador aporta información y desde cuál desinforma? ¿Un evento con 2 interesados muestra "2" o no muestra nada?
+11. ¿"Me interesa" es la etiqueta correcta, o el usuario espera "Voy" y le atribuye un compromiso que la aplicación no sostiene?
+12. ¿Cómo se evita que el sesgo de popularidad entierre a los organizadores pequeños?
 
 ## 11. Relación con v0.1
 
@@ -156,3 +176,4 @@ La investigación simulada mantiene esa dirección, pero pone más énfasis en q
 |---|---|---|
 | v0.1 | 13/08/2026 | Versión inicial con hipótesis y preguntas de investigación |
 | v0.2.0 | 16/08/2026 | Hipótesis revisada, evidencias simuladas, alcance inicial, criterios de éxito y preguntas abiertas |
+| v0.2.0 | 19/08/2026 | Se incorpora la acción "Me interesa" con contador público: entra al alcance inicial, al flujo principal, a los insights, a los criterios de éxito y a las preguntas abiertas. Se precisa qué queda fuera del alcance social: perfiles, seguidores, nombres de interesados y confirmación de asistencia |
