@@ -32,10 +32,15 @@ Queremos comprender las dificultades que enfrentan las personas en Santa Cruz de
 ├── persona/
 │   ├── persona-v0.1.md             # Camila — quien busca (primaria)
 │   └── persona-organizador-v0.1.md # Marco — quien publica (secundaria)
-└── app-map/
-    ├── app-map-v0.1.md              # Dónde encuentra cada cosa
-    ├── flujo-v0.1.md                # Flujo principal — quien busca
-    └── flujo-organizador-v0.1.md    # Segundo flujo — quien publica
+├── app-map/
+│   ├── app-map-v0.1.md              # Dónde encuentra cada cosa
+│   ├── flujo-v0.1.md                # Flujo principal — quien busca
+│   └── flujo-organizador-v0.1.md    # Segundo flujo — quien publica
+└── wireframes/
+    ├── README.md                    # Jerarquía, espaciado y cómo importar a Figma
+    ├── prototipo.html               # Prototipo con vistas enlazadas
+    ├── svg/                         # 7 pantallas — formato para Figma
+    └── png/                         # Las mismas, renderizadas @2x
 ```
 
 ### Qué pregunta responde cada documento
@@ -49,6 +54,7 @@ Queremos comprender las dificultades que enfrentan las personas en Santa Cruz de
 | `app-map/app-map-v0.1.md` | ¿Dónde encuentra esa persona lo que necesita? |
 | `app-map/flujo-v0.1.md` | ¿Qué camino recorre para completar la tarea? |
 | `app-map/flujo-organizador-v0.1.md` | ¿Cómo publica y actualiza un evento quien lo organiza? |
+| `wireframes/README.md` | ¿Cómo se ordena cada pantalla y por qué? |
 
 ## Estado
 
@@ -63,7 +69,9 @@ Queremos comprender las dificultades que enfrentan las personas en Santa Cruz de
 | App map | v0.1 |
 | Flujo principal — quien busca | v0.1 |
 | Flujo del organizador — quien publica | v0.1 |
-| Wireframes / prototipo | Pendiente |
+| Wireframes | v0.1 — 6 pantallas + escala de espaciado |
+| Prototipo con vistas enlazadas | `wireframes/prototipo.html` |
+| MVP en código | Pendiente |
 | Evaluación con usuarios reales | Pendiente |
 
 ### Decisión de diseño más reciente

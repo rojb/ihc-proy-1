@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototipo de wireframes — App de eventos</title>
+<style>
+  :root {
+    --ink: #16181d;
+    --paper: #f4f4f2;
+    --line: #c9c9c4;
+    --hot: #3d5afe;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 14px/1.5 ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+  }
+  aside {
+    padding: 24px 16px;
+    border-right: 1px solid var(--line);
+    background: #fff;
+  }
+  aside h1 { font-size: 15px; margin: 0 0 4px; }
+  aside p.sub { margin: 0 0 24px; font-size: 12px; color: #6b6b66; }
+  nav ol { list-style: none; margin: 0 0 24px; padding: 0; }
+  nav li { margin-bottom: 4px; }
+  nav button {
+    width: 100%; text-align: left; cursor: pointer;
+    padding: 8px; border: 1px solid transparent; border-radius: 4px;
+    background: none; font: inherit; font-size: 13px; color: inherit;
+  }
+  nav button:hover { background: #f0f0ee; }
+  nav button[aria-current="true"] { border-color: var(--ink); font-weight: 600; }
+  nav small { display: block; color: #6b6b66; font-size: 11px; }
+  .group-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+    color: #6b6b66; margin: 0 0 8px; padding-left: 8px;
+  }
+  label.toggle { display: flex; gap: 8px; align-items: center; font-size: 12px; cursor: pointer; }
+  main { display: grid; place-items: center; padding: 32px 16px; }
+  .stage { text-align: center; }
+  .frame {
+    position: relative; width: 375px; margin: 0 auto;
+    background: #fff; border: 1px solid var(--line);
+    box-shadow: 0 12px 32px rgba(0,0,0,.10);
+  }
+  .frame img { display: block; width: 375px; }
+  .hot {
+    position: absolute; cursor: pointer;
+    background: transparent; border: 0; padding: 0;
+    outline: 1px dashed transparent;
+  }
+  body.show-hot .hot {
+    background: rgba(61,90,254,.16);
+    outline: 1px dashed var(--hot);
+  }
+  .hot:focus-visible { outline: 2px solid var(--hot); }
+  .caption { margin: 16px auto 0; max-width: 375px; font-size: 12px; color: #4a4a46; text-align: left; }
+  .caption strong { display: block; font-size: 13px; color: var(--ink); margin-bottom: 4px; }
+  .toast {
+    position: fixed; left: 50%; bottom: 32px; transform: translateX(-50%);
+    background: var(--ink); color: #fff; padding: 8px 16px; border-radius: 4px;
+    font-size: 13px; opacity: 0; pointer-events: none; transition: opacity .18s;
+  }
+  .toast.on { opacity: 1; }
+  @media (max-width: 720px) {
+    body { grid-template-columns: 1fr; }
+    aside { border-right: 0; border-bottom: 1px solid var(--line); }
+  }
+</style>
+</head>
+<body>
+
+<aside>
+  <h1>Prototipo de wireframes</h1>
+  <p class="sub">App de eventos · Santa Cruz de la Sierra</p>
+
+  <p class="group-label">Flujo de Camila · quien busca</p>
+  <nav><ol id="nav-camila"></ol></nav>
+
+  <p class="group-label">Flujo de Marco · quien publica</p>
+  <nav><ol id="nav-marco"></ol></nav>
+
+  <p class="group-label">Referencia</p>
+  <nav><ol id="nav-ref"></ol></nav>
+
+  <label class="toggle">
+    <input type="checkbox" id="toggle-hot"> Mostrar zonas enlazadas
+  </label>
+</aside>
+
+<main>
+  <div class="stage">
+    <div class="frame" id="frame">
+      <img id="screen" alt="">
+      <div id="hotspots"></div>
+    </div>
+    <p class="caption" id="caption"></p>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// Coordenadas en el sistema del SVG (375 de ancho). El marco se muestra a escala 1:1.
+const SCREENS = {
+  "01": {
+    file: "svg/01-lista-eventos.svg",
+    flow: "camila",
+    title: "Lista de eventos",
+    caption: "Aqui ocurre la comparacion. Precio, fecha, distancia e interesados estan en la tarjeta para no tener que abrir cada evento.",
+    hotspots: [
+      { x: 16, y: 160, w: 343, h: 112, to: "02", label: "Abrir evento" },
+      { x: 16, y: 288, w: 343, h: 112, to: "02", label: "Abrir evento" },
+      { x: 16, y: 416, w: 343, h: 112, to: "02", label: "Abrir evento" },
+      { x: 16, y: 544, w: 343, h: 112, to: "02", label: "Abrir evento" },
+      { x: 187, y: 740, w: 188, h: 72, to: "04", label: "Publicar" }
+    ]
+  },
+  "02": {
+    file: "svg/02-detalle-evento.svg",
+    flow: "camila",
+    title: "Detalle del evento",
+    caption: "Verificacion antes de compartir. La accion principal tiene mas peso visual que 'Me interesa': una sola accion manda.",
+    hotspots: [
+      { x: 0, y: 0, w: 375, h: 64, to: "01", label: "Volver" },
+      { x: 16, y: 456, w: 343, h: 56, toast: "Marcado. El contador pasa a 13. Se puede deshacer.", label: "Me interesa" },
+      { x: 16, y: 528, w: 343, h: 56, to: "03", label: "Compartir al grupo" },
+      { x: 0, y: 740, w: 187, h: 72, to: "01", label: "Eventos" },
+      { x: 187, y: 740, w: 188, h: 72, to: "04", label: "Publicar" }
+    ]
+  },
+  "03": {
+    file: "svg/03-compartido.svg",
+    flow: "camila",
+    title: "Compartido",
+    caption: "Fin de la tarea. La app confirma que el mensaje salio completo; el acuerdo del grupo ocurre fuera.",
+    hotspots: [
+      { x: 0, y: 0, w: 375, h: 64, to: "02", label: "Volver al evento" },
+      { x: 16, y: 400, w: 343, h: 56, to: "01", label: "Volver a la lista" },
+      { x: 0, y: 740, w: 187, h: 72, to: "01", label: "Eventos" },
+      { x: 187, y: 740, w: 188, h: 72, to: "04", label: "Publicar" }
+    ]
+  },
+  "04": {
+    file: "svg/04-publicar.svg",
+    flow: "marco",
+    title: "Publicar evento",
+    caption: "Formulario corto: solo los campos que la tarjeta necesita para compararse. Si cuesta mas que una historia de Instagram, no se adopta.",
+    hotspots: [
+      { x: 16, y: 524, w: 343, h: 56, to: "05", label: "Publicar" },
+      { x: 0, y: 740, w: 187, h: 72, to: "01", label: "Eventos" }
+    ]
+  },
+  "05": {
+    file: "svg/05-mis-eventos.svg",
+    flow: "marco",
+    title: "Mis eventos",
+    caption: "El organizador ve vigencia e interesados donde ya administra. El numero no es una lista de asistentes confirmados.",
+    hotspots: [
+      { x: 259, y: 132, w: 84, h: 32, to: "06", label: "Editar" },
+      { x: 259, y: 244, w: 84, h: 32, to: "06", label: "Editar" },
+      { x: 16, y: 456, w: 343, h: 56, to: "04", label: "Publicar otro" },
+      { x: 0, y: 740, w: 187, h: 72, to: "01", label: "Eventos" }
+    ]
+  },
+  "06": {
+    file: "svg/06-editar-evento.svg",
+    flow: "marco",
+    title: "Editar evento",
+    caption: "El paso que justifica la app. El campo modificado tiene mas peso visual. Corregir aca evita repetir el dato en cada canal.",
+    hotspots: [
+      { x: 0, y: 0, w: 375, h: 64, to: "05", label: "Mis eventos" },
+      { x: 16, y: 408, w: 343, h: 56, to: "05", label: "Guardar cambios" },
+      { x: 0, y: 740, w: 187, h: 72, to: "05", label: "Eventos" }
+    ]
+  },
+  "00": {
+    file: "svg/00-escala-espaciado.svg",
+    flow: "ref",
+    title: "Escala de espaciado",
+    caption: "Base 8. Todas las distancias de estas pantallas son multiplos de 8: 8 dentro de un grupo, 16 entre contenido relacionado, 24 entre grupos, 32 entre secciones.",
+    hotspots: []
+  }
+};
+
+const ORDER = { camila: ["01", "02", "03"], marco: ["04", "05", "06"], ref: ["00"] };
+
+const img = document.getElementById("screen");
+const hotsEl = document.getElementById("hotspots");
+const captionEl = document.getElementById("caption");
+const toastEl = document.getElementById("toast");
+let toastTimer;
+
+function showToast(text) {
+  clearTimeout(toastTimer);
+  toastEl.textContent = text;
+  toastEl.classList.add("on");
+  toastTimer = setTimeout(() => toastEl.classList.remove("on"), 2200);
+}
+
+function go(id) {
+  const s = SCREENS[id];
+  if (!s) return;
+  img.src = s.file;
+  img.alt = "Wireframe: " + s.title;
+  captionEl.innerHTML = "<strong>" + s.title + "</strong>" + s.caption;
+
+  hotsEl.textContent = "";
+  for (const h of s.hotspots) {
+    const b = document.createElement("button");
+    b.className = "hot";
+    b.style.left = h.x + "px";
+    b.style.top = h.y + "px";
+    b.style.width = h.w + "px";
+    b.style.height = h.h + "px";
+    b.title = h.label;
+    b.setAttribute("aria-label", h.label);
+    b.addEventListener("click", () => {
+      if (h.toast) showToast(h.toast);
+      else go(h.to);
+    });
+    hotsEl.appendChild(b);
+  }
+
+  for (const btn of document.querySelectorAll("nav button")) {
+    btn.setAttribute("aria-current", String(btn.dataset.id === id));
+  }
+  if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
+}
+
+for (const [flow, ids] of Object.entries(ORDER)) {
+  const list = document.getElementById("nav-" + flow);
+  for (const id of ids) {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    btn.dataset.id = id;
+    btn.innerHTML = SCREENS[id].title + "<small>" + SCREENS[id].file.replace("svg/", "") + "</small>";
+    btn.addEventListener("click", () => go(id));
+    li.appendChild(btn);
+    list.appendChild(li);
+  }
+}
+
+document.getElementById("toggle-hot").addEventListener("change", (e) => {
+  document.body.classList.toggle("show-hot", e.target.checked);
+});
+
+go(SCREENS[location.hash.slice(1)] ? location.hash.slice(1) : "01");
+</script>
+</body>
+</html>

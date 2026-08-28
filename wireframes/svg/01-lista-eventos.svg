@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="812" viewBox="0 0 375 812">
+  <rect width="375" height="812" fill="white" stroke="black" stroke-dasharray="4"/>
+
+  <g transform="translate(0,0)">
+    <rect width="375" height="64" fill="none" stroke="black" stroke-dasharray="4"/>
+    <text font-family="sans-serif" x="16" y="32" font-size="18" fill="black">Eventos</text>
+    <text font-family="sans-serif" x="16" y="50" font-size="11" fill="black">Santa Cruz de la Sierra</text>
+  </g>
+
+  <g transform="translate(16,80)">
+    <rect width="104" height="40" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="52" y="25" text-anchor="middle" font-size="12" fill="black">Este finde</text>
+  </g>
+  <g transform="translate(128,80)">
+    <rect width="96" height="40" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="48" y="25" text-anchor="middle" font-size="12" fill="black">Precio</text>
+  </g>
+  <g transform="translate(232,80)">
+    <rect width="127" height="40" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="63" y="25" text-anchor="middle" font-size="12" fill="black">Distancia</text>
+  </g>
+
+  <text font-family="sans-serif" x="16" y="144" font-size="11" fill="black">8 eventos vigentes</text>
+
+  <g transform="translate(16,160)">
+    <rect width="343" height="112" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="16" y="30" font-size="14" fill="black">Noche de cumbia</text>
+    <rect x="243" y="14" width="84" height="20" fill="none" stroke="black" stroke-dasharray="4"/>
+    <text font-family="sans-serif" x="285" y="28" text-anchor="middle" font-size="10" fill="black">Vigente</text>
+    <text font-family="sans-serif" x="16" y="62" font-size="18" fill="black">Bs 30</text>
+    <text font-family="sans-serif" x="16" y="84" font-size="12" fill="black">Vie 12 sep · 21:00</text>
+    <text font-family="sans-serif" x="16" y="102" font-size="12" fill="black">Equipetrol · 2.1 km</text>
+    <text font-family="sans-serif" x="327" y="102" text-anchor="end" font-size="12" fill="black">12 interesados</text>
+  </g>
+
+  <g transform="translate(16,288)">
+    <rect width="343" height="112" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="16" y="30" font-size="14" fill="black">Jazz en el patio</text>
+    <rect x="243" y="14" width="84" height="20" fill="none" stroke="black" stroke-dasharray="4"/>
+    <text font-family="sans-serif" x="285" y="28" text-anchor="middle" font-size="10" fill="black">Vigente</text>
+    <text font-family="sans-serif" x="16" y="62" font-size="18" fill="black">Bs 50</text>
+    <text font-family="sans-serif" x="16" y="84" font-size="12" fill="black">Vie 12 sep · 20:00</text>
+    <text font-family="sans-serif" x="16" y="102" font-size="12" fill="black">Urubo · 8.4 km</text>
+    <text font-family="sans-serif" x="327" y="102" text-anchor="end" font-size="12" fill="black">4 interesados</text>
+  </g>
+
+  <g transform="translate(16,416)">
+    <rect width="343" height="112" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="16" y="30" font-size="14" fill="black">Feria de bandas</text>
+    <rect x="243" y="14" width="84" height="20" fill="none" stroke="black" stroke-dasharray="4"/>
+    <text font-family="sans-serif" x="285" y="28" text-anchor="middle" font-size="10" fill="black">Vigente</text>
+    <text font-family="sans-serif" x="16" y="62" font-size="18" fill="black">Gratis</text>
+    <text font-family="sans-serif" x="16" y="84" font-size="12" fill="black">Sab 13 sep · 18:00</text>
+    <text font-family="sans-serif" x="16" y="102" font-size="12" fill="black">Centro · 3.0 km</text>
+    <text font-family="sans-serif" x="327" y="102" text-anchor="end" font-size="12" fill="black">31 interesados</text>
+  </g>
+
+  <g transform="translate(16,544)">
+    <rect width="343" height="112" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="16" y="30" font-size="14" fill="black">Stand up comedy</text>
+    <rect x="243" y="14" width="84" height="20" fill="none" stroke="black" stroke-dasharray="4"/>
+    <text font-family="sans-serif" x="285" y="28" text-anchor="middle" font-size="10" fill="black">Vigente</text>
+    <text font-family="sans-serif" x="16" y="62" font-size="18" fill="black">Bs 40</text>
+    <text font-family="sans-serif" x="16" y="84" font-size="12" fill="black">Sab 13 sep · 21:30</text>
+    <text font-family="sans-serif" x="16" y="102" font-size="12" fill="black">Equipetrol · 1.8 km</text>
+    <text font-family="sans-serif" x="327" y="102" text-anchor="end" font-size="12" fill="black">7 interesados</text>
+  </g>
+
+  <g transform="translate(16,672)">
+    <rect width="343" height="48" fill="none" stroke="black"/>
+    <text font-family="sans-serif" x="16" y="30" font-size="14" fill="black">Cine al aire libre</text>
+  </g>
+
+  <g transform="translate(0,740)">
+    <rect width="375" height="72" fill="none" stroke="black" stroke-dasharray="4"/>
+    <line x1="187" y1="0" x2="187" y2="72" stroke="black"/>
+    <text font-family="sans-serif" x="94" y="42" text-anchor="middle" font-size="12" fill="black">Eventos</text>
+    <text font-family="sans-serif" x="281" y="42" text-anchor="middle" font-size="12" fill="black">Publicar</text>
+  </g>
+</svg>
