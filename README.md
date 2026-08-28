@@ -24,13 +24,56 @@ Queremos comprender las dificultades que enfrentan las personas en Santa Cruz de
 ```
 /
 ├── README.md
-└── brief/
-    └── brief-v0.1.md
-    └── brief-v0.2.0.md
-└── research/
-    └── evidencias.md    
+├── brief/
+│   ├── brief-v0.1.md          # Hipótesis inicial
+│   └── brief-v0.2.0.md        # Hipótesis revisada — documento vigente
+├── research/
+│   └── evidencias.md          # Entrevistas simuladas con IA
+├── persona/
+│   ├── persona-v0.1.md             # Camila — quien busca (primaria)
+│   └── persona-organizador-v0.1.md # Marco — quien publica (secundaria)
+└── app-map/
+    ├── app-map-v0.1.md              # Dónde encuentra cada cosa
+    ├── flujo-v0.1.md                # Flujo principal — quien busca
+    └── flujo-organizador-v0.1.md    # Segundo flujo — quien publica
 ```
+
+### Qué pregunta responde cada documento
+
+| Documento | Pregunta |
+|---|---|
+| `brief/brief-v0.2.0.md` | ¿Qué problema resolvemos y con qué alcance? |
+| `research/evidencias.md` | ¿En qué nos basamos para afirmarlo? |
+| `persona/persona-v0.1.md` | ¿Para quién lo resolvemos? |
+| `persona/persona-organizador-v0.1.md` | ¿Quién publica los eventos y qué le cuesta hoy? |
+| `app-map/app-map-v0.1.md` | ¿Dónde encuentra esa persona lo que necesita? |
+| `app-map/flujo-v0.1.md` | ¿Qué camino recorre para completar la tarea? |
+| `app-map/flujo-organizador-v0.1.md` | ¿Cómo publica y actualiza un evento quien lo organiza? |
 
 ## Estado
 
-Brief v0.2.0 — fase de investigación de usuario. Las hipótesis planteadas aún no han sido validadas.
+**Fase de diseño de interacción.** Cerrada la investigación inicial, están definidos el problema, la persona, el mapa de la aplicación y el flujo principal.
+
+| Etapa | Estado |
+|---|---|
+| Brief | v0.2.0 — vigente |
+| Investigación | 4 entrevistas **simuladas con IA** |
+| Persona — Camila (quien busca) | v0.1 |
+| Persona — Marco (quien publica) | v0.1 — **respaldada por 1 sola instancia** |
+| App map | v0.1 |
+| Flujo principal — quien busca | v0.1 |
+| Flujo del organizador — quien publica | v0.1 |
+| Wireframes / prototipo | Pendiente |
+| Evaluación con usuarios reales | Pendiente |
+
+### Decisión de diseño más reciente
+
+Se incorporó la acción **"Me interesa"**: una persona puede contar públicamente que quiere participar en un evento, y el interés se muestra como **contador anónimo** —un número, nunca una lista de nombres—. Está reflejada en el brief, el app map y el flujo.
+
+### Advertencias abiertas
+
+- **Ninguna hipótesis fue validada con usuarios reales.** La evidencia disponible proviene de entrevistas simuladas con IA y sirve para explorar, no para confirmar.
+- **La acción "Me interesa" tiene respaldo desparejo.** Del lado del organizador hay apoyo parcial: hoy ya mide contando respuestas y preguntas. Del lado de quien compara no hay ninguno. Así está marcado en el brief.
+- **La Persona del organizador se apoya en una sola instancia** de la investigación, frente a las tres que sostienen a Camila.
+- **Riesgo identificado:** el contador de interesados puede generar sesgo de popularidad y perjudicar a los organizadores pequeños, que son el usuario secundario del proyecto.
+- **Pendiente antes de implementar el contador:** definir qué identificación mínima evita contar dos veces a la misma persona.
