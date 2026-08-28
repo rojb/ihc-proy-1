@@ -1,0 +1,36 @@
+name: eventos_scz
+description: "MVP de eventos de Santa Cruz de la Sierra — proyecto IHC."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Textos del sistema (selectores de fecha y hora) en español.
+  flutter_localizations:
+    sdk: flutter
+
+  # Cliente HTTP contra la API Nest.
+  http: ^1.2.2
+  # Estado de la app. ChangeNotifier alcanza: el MVP no tiene flujos
+  # concurrentes que justifiquen algo más pesado.
+  provider: ^6.1.2
+  # FR-07 · guarda el identificador local del dispositivo y la caché offline.
+  shared_preferences: ^2.3.3
+  # FR-06 · share sheet nativo del sistema, no una integración propia.
+  share_plus: ^10.1.2
+  # FR-05 · delega el mapa a la app externa del dispositivo.
+  url_launcher: ^6.3.1
+  # Fechas y precios en español boliviano.
+  intl: ^0.20.2
+  # FR-07 · genera el identificador local al primer uso.
+  uuid: ^4.5.1
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

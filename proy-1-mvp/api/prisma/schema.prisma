@@ -1,0 +1,78 @@
+// Modelo de datos del MVP. Mapea 1:1 con los requisitos del PRD v0.1.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// FR-03: un evento cancelado se marca, nunca se borra.
+enum EventStatus {
+  ACTIVE
+  CANCELLED
+}
+
+model Event {
+  id String @id @default(uuid())
+
+  // FR-10 · campos obligatorios del formulario corto
+  name         String
+  startsAt     DateTime
+  /// FR-02: 0 significa "Gratis". Nunca nulo: un evento sin precio no se publica.
+  priceCents   Int
+  currency     String   @default("BOB")
+  locationName String
+
+  // FR-10 · campos opcionales
+  description String?
+  imageUrl    String?
+  /// FR-05 · punto de referencia para ubicar el lugar sin mapa.
+  reference   String?
+
+  /// FR-01: la vigencia se calcula contra el fin. Si es nulo se asume
+  /// startsAt + DEFAULT_EVENT_DURATION_HOURS (ver events.service.ts).
+  endsAt DateTime?
+
+  /// OQ-9 abierta (¿distancia exacta o zona?). El modelo soporta las dos:
+  /// `zone` para la referencia textual, lat/lng para calcular distancia.
+  zone      String
+  latitude  Float?
+  longitude Float?
+
+  status EventStatus @default(ACTIVE)
+
+  /// OQ-4 · supuesto del equipo: el dispositivo que creó el evento es su dueño.
+  /// Es lo único que autoriza editar o cancelar (NFR de seguridad, sin cuentas).
+  ownerDeviceId String
+
+  /// FR-03 / FR-12 · se sella solo cuando una edición cambia datos visibles,
+  /// para poder mostrar "actualizado recientemente" sin falsos positivos.
+  lastEditedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  interests Interest[]
+
+  @@index([startsAt])
+  @@index([ownerDeviceId])
+  @@index([status])
+}
+
+/// FR-08 · "Me interesa", revertible. FR-09 · se expone solo como conteo.
+model Interest {
+  id        String   @id @default(uuid())
+  eventId   String
+  /// FR-07 · identificador local del dispositivo. No es una persona.
+  deviceId  String
+  createdAt DateTime @default(now())
+
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  /// FR-07 · impide contar dos veces al mismo dispositivo.
+  @@unique([eventId, deviceId])
+  @@index([eventId])
+}

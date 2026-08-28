@@ -19,6 +19,14 @@ Proyecto con IA — se utiliza asistencia de IA para exploración de ideas, reda
 
 Queremos comprender las dificultades que enfrentan las personas en Santa Cruz de la Sierra al buscar y decidir a qué evento asistir. La información existe, pero está dispersa entre historias de Instagram, grupos de WhatsApp y flyers sin fecha de vigencia; el precio y la ubicación exacta rara vez están visibles, y la decisión casi nunca es individual. En paralelo, buscamos entender qué barreras encuentran los organizadores pequeños al difundir sus eventos.
 
+## Enlaces
+
+| Qué | Dónde |
+|---|---|
+| Diseño en Figma | [Proyecto AppEventos](https://www.figma.com/design/QAZz0JHICsgl5Qj2yOR7qm/Proyecto-AppEventos?node-id=0-1) |
+| Prototipo de wireframes | `wireframes/prototipo.html` — se abre en el navegador |
+| MVP funcionando | `proy-1-mvp/README.md` — instrucciones para levantarlo |
+
 ## Estructura del repositorio
 
 ```
