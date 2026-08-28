@@ -97,7 +97,7 @@ Del flujo, el paso que sostiene todo lo demás es el **paso 2**:
 
 Es lo que implementaremos primero, con datos de prueba.
 
-El **paso 4 ("Me interesa" con contador) entra después**, porque depende de una decisión todavía sin resolver: qué identificación mínima necesita una persona para que el contador no cuente dos veces a la misma.
+El **paso 4 ("Me interesa" con contador) ya está implementado** en `proy-1-mvp/` (`FR-08`, `FR-09`). Para no contar dos veces a la misma persona se usa un identificador local de dispositivo (`FR-07`), decidido por el equipo y todavía sin validar con usuarios (`OQ-1`).
 
 ---
 

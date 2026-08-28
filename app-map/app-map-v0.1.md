@@ -95,7 +95,7 @@ Perfiles públicos, lista de nombres de interesados, seguidores, chat dentro de 
 2. ¿Distancia exacta o referencia de zona?
 3. ¿Cómo se muestra "actualizado recientemente" sin agregar ruido a la tarjeta?
 4. ¿"Mis eventos" necesita cuenta o alcanza con un enlace de edición?
-5. ¿Qué identificación mínima necesita "Me interesa"? ¿Alcanza con el dispositivo o hace falta cuenta? Esto define si entran cuentas al alcance.
+5. ~~¿Qué identificación mínima necesita "Me interesa"?~~ **Decidido en el MVP:** identificador local de dispositivo, sin cuentas (`FR-07`). Queda por comprobar con usuarios si el contador resiste, porque alguien puede inflarlo reinstalando (`OQ-1`, riesgo `R-6`).
 6. ¿Desde qué número el contador aporta y desde cuál desinforma? Un evento con 2 interesados, ¿muestra "2" o no muestra nada?
 7. ¿El contador ayuda a decidir o solo copia lo que ya se sabe? Hay que comprobar que no sea decorativo.
 8. ¿Cómo se evita que el sesgo de popularidad entierre a los organizadores pequeños?

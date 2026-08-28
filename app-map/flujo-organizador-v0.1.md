@@ -71,14 +71,29 @@ La difusión sigue ocurriendo **fuera de la app**: Marco puede seguir usando Ins
 
 ---
 
+## Estado en el código
+
+Este flujo **ya está implementado** en `proy-1-mvp/`. No es un flujo por construir: es un flujo por probar con usuarios.
+
+| Paso | Dónde vive | Requisito |
+|---|---|---|
+| Publicar | `POST /events` · `app/lib/ui/event_form_page.dart` | `FR-10` |
+| Mis eventos, con vigencia e interesados | `GET /events/mine` · `app/lib/ui/my_events_page.dart` | `FR-11` |
+| Editar | `PATCH /events/:id` | `FR-12` |
+| Cancelar, con confirmación | `POST /events/:id/cancel` | `FR-12` |
+
+El formulario pide nombre, fecha y hora, precio (o "es gratis"), lugar y zona; la descripción y la referencia son opcionales y están plegadas.
+
+---
+
 ## Qué NO cubre este flujo (se ve después)
 
-- Cancelar un evento y avisar a quienes marcaron interés.
+- **Avisar a quienes marcaron interés** cuando el evento se cancela (`FR-17`, quedó fuera del MVP).
 - Eventos recurrentes: el show de **todos** los jueves.
 - Un evento con varias fechas o varios precios por tipo de entrada.
 - Sin conexión: qué pasa con una publicación a medio cargar.
-- Quién puede editar un evento: si hace falta cuenta o alcanza un enlace.
-- Subir imagen o flyer.
+- Qué pasa si el organizador cambia de teléfono: hoy pierde el control de sus eventos.
+- Subir imagen o flyer: el modelo tiene el campo, la carga no está.
 - Qué ve el organizador además del número de interesados.
 
 ---
@@ -86,7 +101,7 @@ La difusión sigue ocurriendo **fuera de la app**: Marco puede seguir usando Ins
 ## Preguntas pendientes
 
 1. ¿Cuántos campos tolera Marco antes de abandonar la publicación?
-2. ¿Cómo se identifica al organizador para editar? ¿Cuenta o enlace de edición? *(La misma pregunta abierta que bloquea el contador de "Me interesa" en el flujo principal.)*
+2. ~~¿Cómo se identifica al organizador para editar?~~ **Decidido en el MVP:** el mismo identificador de dispositivo que publicó el evento es el que puede editarlo y cancelarlo. Sin cuentas. Queda por comprobar qué pasa si el organizador cambia de teléfono (`OQ-4`).
 3. ¿Cómo se comunica que un evento fue actualizado, sin que sea ruido en la tarjeta?
 4. ¿Qué pasa con quienes marcaron interés cuando cambia la hora o el precio?
 5. ¿Publicar acá le ahorra trabajo real, o le agrega un canal más a los que ya mantiene? **Es la hipótesis central de este flujo y no está validada.**
@@ -100,7 +115,7 @@ De este flujo, el paso que sostiene el resto es el **paso 5**:
 
 > **Editar un evento ya publicado y que el cambio quede reflejado en la lista.**
 
-Publicar sin poder corregir no resuelve el problema que la evidencia describe. Se implementa junto con un formulario mínimo de creación, con datos de prueba.
+Publicar sin poder corregir no resuelve el problema que la evidencia describe. **Ya está implementado**, junto con el formulario de creación y el seed de datos de prueba. Lo que falta no es código: es probarlo con un organizador real y ver si le ahorra trabajo o le agrega un canal más.
 
 ---
 

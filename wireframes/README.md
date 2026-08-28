@@ -145,7 +145,7 @@ Qué mirar:
 - **Sin estados de error:** lista vacía, sin conexión, evento cancelado.
 - **Sin imagen ni flyer** en la tarjeta. Sigue abierta la pregunta de si hace falta.
 - **"Me interesa" no navega**, cambia de estado. En el prototipo se muestra como aviso porque no hay una segunda pantalla para eso.
-- El contador de interesados **depende de una decisión sin resolver**: qué identificación mínima evita contar dos veces a la misma persona.
+- El contador de interesados **ya funciona en el MVP**, con un identificador local de dispositivo (`FR-07`). Es una decisión del equipo: `OQ-1` sigue abierta hasta probarlo con usuarios.
 
 ---
 

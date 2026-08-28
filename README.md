@@ -44,11 +44,18 @@ Queremos comprender las dificultades que enfrentan las personas en Santa Cruz de
 │   ├── app-map-v0.1.md              # Dónde encuentra cada cosa
 │   ├── flujo-v0.1.md                # Flujo principal — quien busca
 │   └── flujo-organizador-v0.1.md    # Segundo flujo — quien publica
-└── wireframes/
-    ├── README.md                    # Jerarquía, espaciado y cómo importar a Figma
-    ├── prototipo.html               # Prototipo con vistas enlazadas
-    ├── svg/                         # 7 pantallas — formato para Figma
-    └── png/                         # Las mismas, renderizadas @2x
+├── wireframes/
+│   ├── README.md                    # Jerarquía, espaciado y cómo importar a Figma
+│   ├── prototipo.html               # Prototipo con vistas enlazadas
+│   ├── svg/                         # 7 pantallas — formato para Figma
+│   └── png/                         # Las mismas, renderizadas @2x
+├── bitacora/
+│   └── clase-05-jerarquia-layout-espaciado.md   # Antes · Cambio · Después · Siguiente
+└── proy-1-mvp/                      # El MVP funcionando
+    ├── prd/prd-v0.1.md              # Alcance: FR-*, KR*, OQ-*, R-*
+    ├── api/                         # NestJS + Prisma
+    ├── app/                         # Flutter
+    └── docker-compose.yml           # PostgreSQL
 ```
 
 ### Qué pregunta responde cada documento
@@ -79,7 +86,7 @@ Queremos comprender las dificultades que enfrentan las personas en Santa Cruz de
 | Flujo del organizador — quien publica | v0.1 |
 | Wireframes | v0.1 — 6 pantallas + escala de espaciado |
 | Prototipo con vistas enlazadas | `wireframes/prototipo.html` |
-| MVP en código | Pendiente |
+| MVP en código | v0.1 — Flutter + NestJS + Prisma en `proy-1-mvp/` |
 | Evaluación con usuarios reales | Pendiente |
 
 ### Decisión de diseño más reciente
@@ -92,4 +99,4 @@ Se incorporó la acción **"Me interesa"**: una persona puede contar públicamen
 - **La acción "Me interesa" tiene respaldo desparejo.** Del lado del organizador hay apoyo parcial: hoy ya mide contando respuestas y preguntas. Del lado de quien compara no hay ninguno. Así está marcado en el brief.
 - **La Persona del organizador se apoya en una sola instancia** de la investigación, frente a las tres que sostienen a Camila.
 - **Riesgo identificado:** el contador de interesados puede generar sesgo de popularidad y perjudicar a los organizadores pequeños, que son el usuario secundario del proyecto.
-- **Pendiente antes de implementar el contador:** definir qué identificación mínima evita contar dos veces a la misma persona.
+- **La identificación mínima ya tiene una decisión de implementación, no una respuesta validada.** El MVP usa un identificador local de dispositivo, generado al primer uso, sin registro ni datos personales (`FR-07`). Es una decisión del equipo: `OQ-1` sigue abierta en el PRD hasta que se pruebe con usuarios. El límite conocido está documentado como riesgo `R-6`: sin cuentas, alguien puede inflar el contador reinstalando.

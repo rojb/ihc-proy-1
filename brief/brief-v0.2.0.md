@@ -51,7 +51,7 @@ La evidencia completa se encuentra en `research/evidencias.md`.
 - Si los organizadores aceptarían publicar directamente en la plataforma.
 - Qué mecanismo de actualización permite mantener la vigencia de los eventos.
 - Si un contador de interesados influye realmente en la decisión o solo confirma lo que la persona ya había elegido.
-- Qué identificación mínima necesita alguien para marcar interés sin que la aplicación tenga que crear cuentas.
+- Si el identificador local de dispositivo alcanza para que el contador sea confiable. El MVP ya lo implementó así (`FR-07`), pero es una decisión del equipo: falta comprobar con usuarios si el dato resiste, sabiendo que alguien puede inflarlo reinstalando (riesgo `R-6`).
 
 ## 4. Flujo principal
 
@@ -80,7 +80,7 @@ La primera capacidad concreta a diseñar e implementar será:
 
 La publicación de eventos puede formar parte de la primera versión, pero debe mantenerse como un flujo corto y separado del flujo principal de descubrimiento.
 
-La acción **"Me interesa" con contador público** forma parte de la primera versión, pero **se implementa después de la lista**: depende de resolver antes qué identificación mínima permite no contar dos veces a la misma persona. Sin esa decisión, el contador no significa nada.
+La acción **"Me interesa" con contador público** forma parte de la primera versión y **ya está implementada** en `proy-1-mvp/` (`FR-08`, `FR-09`). Para que el contador no cuente dos veces a la misma persona, el MVP usa un identificador local de dispositivo, generado al primer uso, sin registro ni datos personales (`FR-07`). **Es una decisión del equipo, no una respuesta validada:** `OQ-1` sigue abierta en el PRD.
 
 ## 6. Usuario y contexto
 
@@ -159,7 +159,7 @@ A partir de la v0.1 y de la investigación simulada:
 6. ¿Los organizadores aceptarían crear el evento directamente en la aplicación?
 7. ¿Qué información mínima necesita un organizador para publicar sin sentir que está haciendo más trabajo que en Instagram?
 8. ¿La aplicación reduce realmente el número de pasos y aplicaciones utilizadas frente al método actual?
-9. ¿Qué identificación mínima necesita "Me interesa" para que el contador sea confiable sin obligar a crear una cuenta?
+9. ¿El identificador local de dispositivo alcanza para que el contador sea confiable? El MVP lo implementó así; falta comprobarlo con usuarios (`OQ-1`).
 10. ¿Desde qué número el contador aporta información y desde cuál desinforma? ¿Un evento con 2 interesados muestra "2" o no muestra nada?
 11. ¿"Me interesa" es la etiqueta correcta, o el usuario espera "Voy" y le atribuye un compromiso que la aplicación no sostiene?
 12. ¿Cómo se evita que el sesgo de popularidad entierre a los organizadores pequeños?
